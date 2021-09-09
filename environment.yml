@@ -1,0 +1,12 @@
+name: csf
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - imageio
+    - numpy
+    - parse
+    - reportlab
+    - svglib
