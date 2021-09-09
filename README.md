@@ -2,9 +2,10 @@
 
 
 
+
 # Definition
 
-Point ![p_{x,y}](https://latex.codecogs.com/svg.latex?p_{x,y}) is described by ![p_x](https://latex.codecogs.com/svg.latex?p_x) coordinate and ![p_y](https://latex.codecogs.com/svg.latex?p_y) coordinate.
+Point ![p(x,y)](https://latex.codecogs.com/svg.latex?p(x,y)) is described by ![p_x](https://latex.codecogs.com/svg.latex?p_x) coordinate and ![p_y](https://latex.codecogs.com/svg.latex?p_y) coordinate.
 
 Line ![l(p^a,p^b)](https://latex.codecogs.com/svg.latex?l(p^a,p^b)) is described by two points.
 
@@ -21,8 +22,9 @@ image | <img src="data/CrossedSquare0_table_1.svg" width="128" height="128"/></t
 There are several ways to build a Crossed Square Fractal of iteration ![n](https://latex.codecogs.com/svg.latex?n). ![cs_{n}](https://latex.codecogs.com/svg.latex?cs_{n}) is built by adding figures, transforming the exist ones or both.
 
 
+## Crossed Square 0
 
-## Crossed Square 0 
+<p align="center"><img src="data/a_CrossedSquare0_4.gif" width="256" height="256"/img></p>
 
 ![cs_{n}](https://latex.codecogs.com/svg.latex?cs_{n}) is built by CrossedSquare0 as follow:
 
@@ -34,27 +36,29 @@ There are several ways to build a Crossed Square Fractal of iteration ![n](https
 *	![num_{d1}=num-1](https://latex.codecogs.com/svg.latex?num_{d1}=num-1) - number of lines in side diagonal; 
 *	![step=1/num](https://latex.codecogs.com/svg.latex?step=1/num) - the step value between lines.
 
-2. Add horizontal lines:
+2. Calculate horizontal lines:
 
-![l_{i}(p_{0,i*step},p_{1,i*step})](https://latex.codecogs.com/svg.latex?l_{i}(p_{0,i*step},p_{1,i*step})) for ![i=\overline{0,...,num_{h}}](https://latex.codecogs.com/svg.latex?i=\overline{0,...,num_{h}})
+![l^{h}_{i}=l(p(0,i*step),p(1,i*step))](https://latex.codecogs.com/svg.latex?l^{h}_{i}=l(p(0,i*step),p(1,i*step))) for ![i=\overline{0,...,num_{h}}](https://latex.codecogs.com/svg.latex?i=\overline{0,...,num_{h}})
 
-3. Add vertical lines: 
+3. Calculate vertical lines: 
 
-![l_{i}(p_{i*step,0},p_{i*step,1})](https://latex.codecogs.com/svg.latex?l_{i}(p_{i*step,0},p_{i*step,1})) for ![i=\overline{0,...,num_{v}}](https://latex.codecogs.com/svg.latex?i=\overline{0,...,num_{v}})
+![l^{v}_{i}=l(p(i*step,0),p(i*step,1))](https://latex.codecogs.com/svg.latex?l^{v}_{i}=l(p(i*step,0),p(i*step,1))) for ![i=\overline{0,...,num_{v}}](https://latex.codecogs.com/svg.latex?i=\overline{0,...,num_{v}})
 
-4. Add lines for main diagonal:
+4. Calculate lines for main diagonal:
 
-![l_{0}=l(p_{0,0},p_{1,1})](https://latex.codecogs.com/svg.latex?l_{0}=l(p_{0,0},p_{1,1}))
+![l^{d0}_{0}=l(p(0,0),p(1,1))](https://latex.codecogs.com/svg.latex?l^{d0}_{0}=l(p(0,0),p(1,1)))
 
-![l_{i}=l_{0}+\begin{bmatrix}l(p_{0,i*step},p_{i*(-step),0})\\l(p_{i*step,0},p_{0,i*(-step)})\end{bmatrix}](https://latex.codecogs.com/svg.latex?l_{i}=l_{0}+\begin{bmatrix}l(p_{0,i*step},p_{i*(-step),0})\\\\l(p_{i*step,0},p_{0,i*(-step)})\end{bmatrix}) for ![i=\overline{1,...,num_{d0}}](https://latex.codecogs.com/svg.latex?i=\overline{1,...,num_{d0}})
+![\begin{bmatrix}l^{d0}_{i}\\l^{d0}_{num_{d0}+i}\end{bmatrix}=l^{d0}_{0}+\begin{bmatrix}l(p(0,i*step),p_{i*(-step),0})\\l(p(i*step,0),p(0,i*(-step)))\end{bmatrix}](https://latex.codecogs.com/svg.latex?\begin{bmatrix}l^{d0}_{i}\\\\l^{d0}_{num_{d0}+i}\end{bmatrix}=l^{d0}_{0}+\begin{bmatrix}l(p(0,i*step),p_{i*(-step),0})\\\\l(p(i*step,0),p(0,i*(-step)))\end{bmatrix}) for ![i=\overline{1,...,num_{d0}}](https://latex.codecogs.com/svg.latex?i=\overline{1,...,num_{d0}})
 
-5. Add lines for side diagonal:
+5. Calculate lines for side diagonal:
 
-![l_{0}=l(p_{1,0},p_{0,1})](https://latex.codecogs.com/svg.latex?l_{0}=l(p_{1,0},p_{0,1}))
+![l^{d1}_{0}=l(p_{1,0},p_{0,1})](https://latex.codecogs.com/svg.latex?l^{d1}_{0}=l(p_{1,0},p_{0,1}))
 
-![l_{i}=l_{0}+\begin{bmatrix}l(p_{i*(-step),0},p_{0,i*(-step)})\\l(p_{0,i*step},p_{i*step,0})\end{bmatrix}](https://latex.codecogs.com/svg.latex?l_{i}=l_{0}+\begin{bmatrix}l(p_{i*(-step),0},p_{0,i*(-step)})\\l(p_{0,i*step},p_{i*step,0})\end{bmatrix}) for ![i=\overline{1,...,num_{d1}}](https://latex.codecogs.com/svg.latex?i=\overline{1,...,num_{d1}})
+![\begin{bmatrix}l^{d1}_{i}\\l^{d1}_{num_{d1}+i}\end{bmatrix}=l^{d1}_{0}+\begin{bmatrix}l(p(i*(-step),0),p(0,i*(-step)))\\l(p(0,i*step),p(i*step,0))\end{bmatrix}](https://latex.codecogs.com/svg.latex?\begin{bmatrix}l^{d1}_{i}\\\\l^{d1}_{num_{d1}+i}\end{bmatrix}=l^{d1}_{0}+\begin{bmatrix}l(p(i*(-step),0),p(0,i*(-step)))\\\\l(p(0,i*step),p(i*step,0))\end{bmatrix}) for ![i=\overline{1,...,num_{d1}}](https://latex.codecogs.com/svg.latex?i=\overline{1,...,num_{d1}})
 
-<img src="data/a_CrossedSquare0_4.gif" width="256" height="256"/>
+6. Collect all lines:
+
+![cs_{n}=\left[l^{h},l^{v},l^{d0},l^{d1}\right]](https://latex.codecogs.com/svg.latex?cs_{n}=\left[l^{h},l^{v},l^{d0},l^{d1}\right])
 
 
 
@@ -62,36 +66,26 @@ There are several ways to build a Crossed Square Fractal of iteration ![n](https
 <img src="data/a_CrossedSquare1_4.gif" width="256" height="256"/>
 
 
-
 ## Crossed Square 2
 <img src="data/a_CrossedSquare2_4.gif" width="256" height="256"/>
-
 
 
 ## Crossed Square 3
 <img src="data/a_CrossedSquare3_4.gif" width="256" height="256"/>
 
 
-
 ## Crossed Square 4
 <img src="data/a_CrossedSquare4_4.gif" width="256" height="256"/>
-
 
 
 ## Crossed Square 5
 <img src="data/a_CrossedSquare5_4.gif" width="256" height="256"/>
 
-
-
 # How To Run It?
 You can create environment by using file [environment.yml](environment.yml).
 
-
-
 # TODO
 - To implement the [svg_decode](crossedsquare.py#L100) method for the CrossedSquare class.
-
-
 
 # Critic
 It was more fast with pure numpy implementation, but less elegant. Is there any other method to define ![cs_{n}](cs_{n})? It is fractal, isn't it?
