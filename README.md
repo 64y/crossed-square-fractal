@@ -14,9 +14,13 @@ Crossed Squared Fractal on different iterations
 
 n | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 :-:|---|---|---|---|---|---|---|---
-image | <img src="data/CrossedSquare0_table_1.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_2.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_3.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_4.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_5.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_6.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_7.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_8.svg" width="128" height="128"/></td>
+image | <img src="data/CrossedSquare0_table_1.svg" width="128" height="128"/> | <img src="data/CrossedSquare0_table_2.svg" width="128" height="128"/> | <img src="data/CrossedSquare0_table_3.svg" width="128" height="128"/> | <img src="data/CrossedSquare0_table_4.svg" width="128" height="128"/> | <img src="data/CrossedSquare0_table_5.svg" width="128" height="128"/> | <img src="data/CrossedSquare0_table_6.svg" width="128" height="128"/> | <img src="data/CrossedSquare0_table_7.svg" width="128" height="128"/> | <img src="data/CrossedSquare0_table_8.svg" width="128" height="128"/>
 
 There are several ways to build a Crossed Square Fractal of iteration ![n](https://latex.codecogs.com/svg.latex?n). ![cs_{n}](https://latex.codecogs.com/svg.latex?cs_{n}) is built by adding figures, transforming the existing ones or both.
+
+name | CrossedSquare0 | CrossedSquare1 | CrossedSquare2 | CrossedSquare3 | CrossedSquare4 | CrossedSquare5
+:-:|---|---|---|---|---|---
+image | <img src="data/CrossedSquare0_4.svg" width="128" height="128"/> | <img src="data/CrossedSquare1_4.svg" width="128" height="128"/> | <img src="data/CrossedSquare2_4.svg" width="128" height="128"/> | <img src="data/CrossedSquare3_4.svg" width="128" height="128"/> | <img src="data/CrossedSquare4_4.svg" width="128" height="128"/> | <img src="data/CrossedSquare5_4.svg" width="128" height="128"/>
 
 
 ## Crossed Square 0
@@ -34,23 +38,23 @@ There are several ways to build a Crossed Square Fractal of iteration ![n](https
 
 2. Calculate horizontal lines:
 
-![l^{h}_{i}=l(p(0,i*step),p(1,i*step))](https://latex.codecogs.com/svg.latex?l^{h}_{i}=l(p(0,i*step),p(1,i*step))) for ![i=\overline{0,...,num_{h}}](https://latex.codecogs.com/svg.latex?i=\overline{0,...,num_{h}})
+![l^{h}_{i}=l(p(0,{i}\cdot{step}),p(1,{i}\cdot{step}))](https://latex.codecogs.com/svg.latex?l^{h}_{i}=l(p(0,{i}\cdot{step}),p(1,{i}\cdot{step}))) for ![i=\overline{0,...,num_{h}}](https://latex.codecogs.com/svg.latex?i=\overline{0,...,num_{h}})
 
 3. Calculate vertical lines: 
 
-![l^{v}_{i}=l(p(i*step,0),p(i*step,1))](https://latex.codecogs.com/svg.latex?l^{v}_{i}=l(p(i*step,0),p(i*step,1))) for ![i=\overline{0,...,num_{v}}](https://latex.codecogs.com/svg.latex?i=\overline{0,...,num_{v}})
+![l^{v}_{i}=l(p({i}\cdot{step},0),p({i}\cdot{step},1))](https://latex.codecogs.com/svg.latex?l^{v}_{i}=l(p({i}\cdot{step},0),p({i}\cdot{step},1))) for ![i=\overline{0,...,num_{v}}](https://latex.codecogs.com/svg.latex?i=\overline{0,...,num_{v}})
 
 4. Calculate lines for main diagonal:
 
 ![l^{d0}_{0}=l(p(0,0),p(1,1))](https://latex.codecogs.com/svg.latex?l^{d0}_{0}=l(p(0,0),p(1,1)))
 
-![\begin{bmatrix}l^{d0}_{i}\\l^{d0}_{num_{d0}+i}\end{bmatrix}=l^{d0}_{0}+\begin{bmatrix}l(p(0,i*step),p_{i*(-step),0})\\l(p(i*step,0),p(0,i*(-step)))\end{bmatrix}](https://latex.codecogs.com/svg.latex?\begin{bmatrix}l^{d0}_{i}\\\\l^{d0}_{num_{d0}+i}\end{bmatrix}=l^{d0}_{0}+\begin{bmatrix}l(p(0,i*step),p_{i*(-step),0})\\\\l(p(i*step,0),p(0,i*(-step)))\end{bmatrix}) for ![i=\overline{1,...,num_{d0}}](https://latex.codecogs.com/svg.latex?i=\overline{1,...,num_{d0}})
+![\begin{bmatrix}l^{d0}_{i}\\l^{d0}_{num_{d0}+i}\end{bmatrix}=l^{d0}_{0}+\begin{bmatrix}l(p(0,{i}\cdot{step}),p_{{i}\cdot{(-step)},0})\\l(p({i}\cdot{step},0),p(0,{i}\cdot{(-step)}))\end{bmatrix}](https://latex.codecogs.com/svg.latex?\begin{bmatrix}l^{d0}_{i}\\l^{d0}_{num_{d0}+i}\end{bmatrix}=l^{d0}_{0}+\begin{bmatrix}l(p(0,{i}\cdot{step}),p_{{i}\cdot{(-step)},0})\\l(p({i}\cdot{step},0),p(0,{i}\cdot{(-step)}))\end{bmatrix}) for ![i=\overline{1,...,num_{d0}}](https://latex.codecogs.com/svg.latex?i=\overline{1,...,num_{d0}})
 
 5. Calculate lines for side diagonal:
 
 ![l^{d1}_{0}=l(p_{1,0},p_{0,1})](https://latex.codecogs.com/svg.latex?l^{d1}_{0}=l(p_{1,0},p_{0,1}))
 
-![\begin{bmatrix}l^{d1}_{i}\\l^{d1}_{num_{d1}+i}\end{bmatrix}=l^{d1}_{0}+\begin{bmatrix}l(p(i*(-step),0),p(0,i*(-step)))\\l(p(0,i*step),p(i*step,0))\end{bmatrix}](https://latex.codecogs.com/svg.latex?\begin{bmatrix}l^{d1}_{i}\\\\l^{d1}_{num_{d1}+i}\end{bmatrix}=l^{d1}_{0}+\begin{bmatrix}l(p(i*(-step),0),p(0,i*(-step)))\\\\l(p(0,i*step),p(i*step,0))\end{bmatrix}) for ![i=\overline{1,...,num_{d1}}](https://latex.codecogs.com/svg.latex?i=\overline{1,...,num_{d1}})
+![\begin{bmatrix}l^{d1}_{i}\\l^{d1}_{num_{d1}+i}\end{bmatrix}=l^{d1}_{0}+\begin{bmatrix}l(p({i}\cdot{-step},0),p(0,{i}\cdot{-step}))\\l(p(0,{i}\cdot{step}),p({i}\cdot{step},0))\end{bmatrix}](https://latex.codecogs.com/svg.latex?\begin{bmatrix}l^{d1}_{i}\\\\l^{d1}_{num_{d1}+i}\end{bmatrix}=l^{d1}_{0}+\begin{bmatrix}l(p({i}\cdot{-step},0),p(0,{i}\cdot{-step}))\\\\l(p(0,{i}\cdot{step}),p({i}\cdot{step},0))\end{bmatrix}) for ![i=\overline{1,...,num_{d1}}](https://latex.codecogs.com/svg.latex?i=\overline{1,...,num_{d1}})
 
 6. Collect all lines:
 
@@ -70,7 +74,7 @@ There are several ways to build a Crossed Square Fractal of iteration ![n](https
 
 ![cs_{1}=\begin{bmatrix}l(p(0.0,0.0),p(1.0,0.0))&l(p(1.0,0.0),p(1.0,1.0))&l(p(1.0,1.0),p(0.0,1.0))&l(p(0.0,1.0),p(0.0,0.0))\\l(p(0.0,0.0),p(0.5,0.5))&l(p(1.0,0.0),p(0.5,0.5))&l(p(1.0,1.0),p(0.5,0.5))&l(p(0.0,1.0),p(0.5,0.5))\end{bmatrix}](https://latex.codecogs.com/svg.latex?cs_{1}=\begin{bmatrix}l(p(0.0,0.0),p(1.0,0.0))&l(p(1.0,0.0),p(1.0,1.0))&l(p(1.0,1.0),p(0.0,1.0))&l(p(0.0,1.0),p(0.0,0.0))\\\\l(p(0.0,0.0),p(0.5,0.5))&l(p(1.0,0.0),p(0.5,0.5))&l(p(1.0,1.0),p(0.5,0.5))&l(p(0.0,1.0),p(0.5,0.5))\end{bmatrix})
 
-![cs^{scaled}_{1}=step*cs_{1}](https://latex.codecogs.com/svg.latex?cs^{scaled}_{1}=step*cs_{1})
+![cs^{scaled}_{1}={step}\cdot{cs_{1}}](https://latex.codecogs.com/svg.latex?cs^{scaled}_{1}={step}\cdot{cs_{1}})
 
 3. Collecting a matrix of scaled Crossed Squares:
 
