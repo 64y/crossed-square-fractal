@@ -1,9 +1,6 @@
-
-
 # Crossed Square Fractal
 
-
-
+[TODO - Link](#todo)
 
 # Definition
 
@@ -144,7 +141,18 @@ CrossedSquare3 is differ from CrossedSquare2 by ![cs_{1}](https://latex.codecogs
 ## Crossed Square 5
 <p align="center"><img src="data/a_CrossedSquare5_4.gif" width="256" height="256"/></p>
 
+CrossedSquare5 is a combination of CrossedSquare4 and CrossedSquare2 (step 3. and step 4.). After steps 2.-4. from CrossedSquare4 we perform step 3. and 4. from CrossedSquare2, but we put another translated-scaled-rotated-translated Crossed Square on its original instead of inscribing it into the last one. So there is a ![n](https://latex.codecogs.com/svg.latex?n) layers of overlapping triangles in ![cs_{n}](https://latex.codecogs.com/svg.latex?cs_{n}).
 
+number of layers | number of triangles in layer
+:-: | :-:
+1 | 4
+1 2 | 8 8
+1 2 3 | 16 32 16
+1 2 3 4 | 32 96 96 32
+1 2 3 4 5 | 64 256 386 256 64
+1 2 3 4 5 6 | 128 640 1280 1280 640 128
+1 2 3 4 5 6 7 |256 1536 3840 5120 3840 1536 256
+1 2 3 4 5 6 7 8 | 512 3584 10752 17920 17920 10752 3584 512
 
 # How To Run It?
 You can create environment by using file [environment.yml](environment.yml).
@@ -153,4 +161,4 @@ You can create environment by using file [environment.yml](environment.yml).
 - To implement the [svg_decode](crossedsquare.py#L100) method for the CrossedSquare class.
 
 # Critic
-It was more fast with pure numpy implementation, but less elegant. Is there any other method to define ![cs_{n}](cs_{n})? It is fractal, isn't it?
+It was more fast with pure numpy implementation, but less elegant. Is there any other method to define ![cs_{n}](https://latex.codecogs.com/svg.latex?cs_{n})? It is fractal, isn't it?
