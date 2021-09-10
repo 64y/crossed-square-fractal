@@ -1,7 +1,5 @@
 # Crossed Square Fractal
 
-[TODO - Link](#todo)
-
 # Definition
 
 Point ![p(x,y)](https://latex.codecogs.com/svg.latex?p(x,y)) is described by ![p_x](https://latex.codecogs.com/svg.latex?p_x) coordinate and ![p_y](https://latex.codecogs.com/svg.latex?p_y) coordinate.
