@@ -19,7 +19,7 @@ n | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 :-:|---|---|---|---|---|---|---|---
 image | <img src="data/CrossedSquare0_table_1.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_2.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_3.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_4.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_5.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_6.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_7.svg" width="128" height="128"/></td> | <img src="data/CrossedSquare0_table_8.svg" width="128" height="128"/></td>
 
-There are several ways to build a Crossed Square Fractal of iteration ![n](https://latex.codecogs.com/svg.latex?n). ![cs_{n}](https://latex.codecogs.com/svg.latex?cs_{n}) is built by adding figures, transforming the exist ones or both.
+There are several ways to build a Crossed Square Fractal of iteration ![n](https://latex.codecogs.com/svg.latex?n). ![cs_{n}](https://latex.codecogs.com/svg.latex?cs_{n}) is built by adding figures, transforming the existing ones or both.
 
 
 ## Crossed Square 0
@@ -29,11 +29,11 @@ There are several ways to build a Crossed Square Fractal of iteration ![n](https
 ![cs_{n}](https://latex.codecogs.com/svg.latex?cs_{n}) is built by CrossedSquare0 as follow:
 
 1. Calculate constants: 
-*	![num={2^{n-1}}](https://latex.codecogs.com/svg.latex?num={2^{n-1}}) - number of rows and cols in Crossed Square Fractal matrix; 
-*	![num_{h}=num+1](https://latex.codecogs.com/svg.latex?num_{h}=num+1) - number of horizontal lines; 
-*	![num_{v}=num+1](https://latex.codecogs.com/svg.latex?num_{v}=num+1) - number of vertical lines; 
-*	![num_{d0}=num-1](https://latex.codecogs.com/svg.latex?num_{d0}=num-1) - number of lines in main diagonal; 
-*	![num_{d1}=num-1](https://latex.codecogs.com/svg.latex?num_{d1}=num-1) - number of lines in side diagonal; 
+*	![num={2^{n-1}}](https://latex.codecogs.com/svg.latex?num={2^{n-1}}) - number of rows and cols in Crossed Square Fractal matrix;
+*	![num_{h}=num+1](https://latex.codecogs.com/svg.latex?num_{h}=num+1) - number of horizontal lines;
+*	![num_{v}=num+1](https://latex.codecogs.com/svg.latex?num_{v}=num+1) - number of vertical lines;
+*	![num_{d0}=num-1](https://latex.codecogs.com/svg.latex?num_{d0}=num-1) - number of lines in main diagonal;
+*	![num_{d1}=num-1](https://latex.codecogs.com/svg.latex?num_{d1}=num-1) - number of lines in side diagonal;
 *	![step=1/num](https://latex.codecogs.com/svg.latex?step=1/num) - the step value between lines.
 
 2. Calculate horizontal lines:
@@ -61,25 +61,44 @@ There are several ways to build a Crossed Square Fractal of iteration ![n](https
 ![cs_{n}=\left[l^{h},l^{v},l^{d0},l^{d1}\right]](https://latex.codecogs.com/svg.latex?cs_{n}=\left[l^{h},l^{v},l^{d0},l^{d1}\right])
 
 
-
 ## Crossed Square 1
-<img src="data/a_CrossedSquare1_4.gif" width="256" height="256"/>
+
+<p align="center"><img src="data/a_CrossedSquare1_4.gif" width="256" height="256"/></p>
+
+![cs^{scaled}_{n}](https://latex.codecogs.com/svg.latex?cs_{n}) is built by CrossedSquare1 as follow:
+
+1. Calculate constants: 
+*	![num={2^{n-1}}](https://latex.codecogs.com/svg.latex?num={2^{n-1}}) - number of rows and cols in Crossed Square Fractal matrix;
+*	![step=1/num](https://latex.codecogs.com/svg.latex?step=1/num) - the step value between lines.
+
+2. Calculate scaled Crossed Square of iteration ![1](https://latex.codecogs.com/svg.latex?1):
+
+![cs_{1}=\begin{bmatrix}l(p(0.0,0.0),p(1.0,0.0))&l(p(1.0,0.0),p(1.0,1.0))&l(p(1.0,1.0),p(0.0,1.0))&l(p(0.0,1.0),p(0.0,0.0))\\l(p(0.0,0.0),p(0.5,0.5))&l(p(1.0,0.0),p(0.5,0.5))&l(p(1.0,1.0),p(0.5,0.5))&l(p(0.0,1.0),p(0.5,0.5))\end{bmatrix}](https://latex.codecogs.com/svg.latex?cs_{1}=\begin{bmatrix}l(p(0.0,0.0),p(1.0,0.0))&l(p(1.0,0.0),p(1.0,1.0))&l(p(1.0,1.0),p(0.0,1.0))&l(p(0.0,1.0),p(0.0,0.0))\\\\l(p(0.0,0.0),p(0.5,0.5))&l(p(1.0,0.0),p(0.5,0.5))&l(p(1.0,1.0),p(0.5,0.5))&l(p(0.0,1.0),p(0.5,0.5))\end{bmatrix})
+
+![cs^{scaled}_{1}=step*cs_{1}](https://latex.codecogs.com/svg.latex?cs^{scaled}_{1}=step*cs_{1})
+
+3. Collecting a matrix of scaled Crossed Squares:
+
+![cs_{n}=\begin{Bmatrix}p(x,y)+cs^{scaled}_{1}|x=\overline{0.0,step,...,1.0-step},y=\overline{0.0,step,...,1.0-step}\end{Bmatrix}](https://latex.codecogs.com/svg.latex?cs_{n}=\begin{Bmatrix}p(x,y)+cs^{scaled}_{1}|x=\overline{0.0,step,...,1.0-step},y=\overline{0.0,step,...,1.0-step}\end{Bmatrix})
 
 
 ## Crossed Square 2
-<img src="data/a_CrossedSquare2_4.gif" width="256" height="256"/>
+
+<p align="center"><img src="data/a_CrossedSquare2_4.gif" width="256" height="256"/></p>
+
+![cs^{scaled}_{n}](https://latex.codecogs.com/svg.latex?cs_{n}) is built by CrossedSquare2 as follow:
 
 
 ## Crossed Square 3
-<img src="data/a_CrossedSquare3_4.gif" width="256" height="256"/>
+<p align="center"><img src="data/a_CrossedSquare3_4.gif" width="256" height="256"/></p>
 
 
 ## Crossed Square 4
-<img src="data/a_CrossedSquare4_4.gif" width="256" height="256"/>
+<p align="center"><img src="data/a_CrossedSquare4_4.gif" width="256" height="256"/></p>
 
 
 ## Crossed Square 5
-<img src="data/a_CrossedSquare5_4.gif" width="256" height="256"/>
+<p align="center"><img src="data/a_CrossedSquare5_4.gif" width="256" height="256"/></p>
 
 # How To Run It?
 You can create environment by using file [environment.yml](environment.yml).
