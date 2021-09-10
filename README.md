@@ -1,3 +1,5 @@
+
+
 # Crossed Square Fractal
 
 
@@ -9,9 +11,9 @@ Point ![p(x,y)](https://latex.codecogs.com/svg.latex?p(x,y)) is described by ![p
 
 Line ![l(p^a,p^b)](https://latex.codecogs.com/svg.latex?l(p^a,p^b)) is described by two points.
 
-Triangle ![t(p^a,p^b,p^c)](https://latex.codecogs.com/svg.latex?t(p^a,p^b,p^c)) is described by tree points. Each triangle is ai sosceles right triangles by default. Points ![p^a](https://latex.codecogs.com/svg.latex?p^a) and ![p^b](https://latex.codecogs.com/svg.latex?p^b) are points of hypotenuse and ![p^c](https://latex.codecogs.com/svg.latex?p^c) is point of right angle.
+Triangle ![t(p^a,p^b,p^c)](https://latex.codecogs.com/svg.latex?t(p^a,p^b,p^c)) is described by tree points. Each triangle is a isosceles right triangles by default. Points ![p^a](https://latex.codecogs.com/svg.latex?p^a) and ![p^b](https://latex.codecogs.com/svg.latex?p^b) are points of hypotenuse and ![p^c](https://latex.codecogs.com/svg.latex?p^c) is point of right angle.
 
-Crossed Square Fractal ![cs_{n}\big(p^a,p^b\big)](https://latex.codecogs.com/svg.latex?cs_{n}\big(p^a,p^b\big)) of iteration ![n](https://latex.codecogs.com/svg.latex?n) is a matrix ![{2^{n-1}}\times{2^{n-1}}](https://latex.codecogs.com/svg.latex?{2^{n-1}}\times{2^{n-1}}) of Crossed Squares for total of ![{2^{n-1}}^2](https://latex.codecogs.com/svg.latex?{2^{n-1}}^2) Crossed Squares. By default ![p^a=p_{0,0}](https://latex.codecogs.com/svg.latex?p^a=p_{0,0}) and ![p^b=p_{1,1}](https://latex.codecogs.com/svg.latex?p^b=p_{1,1}). Simple Crossed Square is as Crossed Square Fractal of iteration ![1](https://latex.codecogs.com/svg.latex?1) - ![cs_{1}](https://latex.codecogs.com/svg.latex?cs_{1}). Crossed Square is a collection of figures: lines or triangles.
+Crossed Square Fractal ![cs_{n}\big(p^a,p^b\big)](https://latex.codecogs.com/svg.latex?cs_{n}\big(p^a,p^b\big)) of iteration ![n](https://latex.codecogs.com/svg.latex?n) is a matrix ![{2^{n-1}}\times{2^{n-1}}](https://latex.codecogs.com/svg.latex?{2^{n-1}}\times{2^{n-1}}) of Crossed Squares for total of ![{2^{2(n-1)}}](https://latex.codecogs.com/svg.latex?{2^{2(n-1)}}) Crossed Squares. By default ![p^a=p_{0,0}](https://latex.codecogs.com/svg.latex?p^a=p_{0,0}) and ![p^b=p_{1,1}](https://latex.codecogs.com/svg.latex?p^b=p_{1,1}). Simple Crossed Square is as Crossed Square Fractal of iteration ![1](https://latex.codecogs.com/svg.latex?1) - ![cs_{1}](https://latex.codecogs.com/svg.latex?cs_{1}). Crossed Square is a collection of figures: lines or triangles.
 
 Crossed Squared Fractal on different iterations
 
@@ -23,7 +25,6 @@ There are several ways to build a Crossed Square Fractal of iteration ![n](https
 
 
 ## Crossed Square 0
-
 <p align="center"><img src="data/a_CrossedSquare0_4.gif" width="256" height="256"/img></p>
 
 ![cs_{n}](https://latex.codecogs.com/svg.latex?cs_{n}) is built by CrossedSquare0 as follow:
@@ -62,7 +63,6 @@ There are several ways to build a Crossed Square Fractal of iteration ![n](https
 
 
 ## Crossed Square 1
-
 <p align="center"><img src="data/a_CrossedSquare1_4.gif" width="256" height="256"/></p>
 
 ![cs^{scaled}_{n}](https://latex.codecogs.com/svg.latex?cs_{n}) is built by CrossedSquare1 as follow:
@@ -83,7 +83,6 @@ There are several ways to build a Crossed Square Fractal of iteration ![n](https
 
 
 ## Crossed Square 2
-
 <p align="center"><img src="data/a_CrossedSquare2_4.gif" width="256" height="256"/></p>
 
 ![cs^{scaled}_{n}](https://latex.codecogs.com/svg.latex?cs_{n}) is built by CrossedSquare2 as follow:
@@ -94,17 +93,17 @@ There are several ways to build a Crossed Square Fractal of iteration ![n](https
 
 2. For each other iteration ![i=\overline{2,...,n}](https://latex.codecogs.com/svg.latex?i=\overline{2,...,n}) of Crossed Square next steps are repeating.
 
-3. For each Crossed Square ![cs^{j}_{i-1},j=\overline{1,2,...,{2^{i-1}}^2}](https://latex.codecogs.com/svg.latex?cs^{j}_{i-1},j=\overline{1,2,...,{2^{i-1}}^2}) with center in ![p(x^{j}_{i-1},y^{j}_{i-1})](https://latex.codecogs.com/svg.latex?p(x^{j}_{i-1},y^{j}_{i-1})) in current matrix of Crossed Squares ![cs_{i-1}](https://latex.codecogs.com/svg.latex?cs_{i-1}), its translated (by ![p(-x^{j}_{i-1},-y^{j}_{i-1})](https://latex.codecogs.com/svg.latex?p(-x^{j}_{i-1},-y^{j}_{i-1})))scaled (by ![\sqrt{2}/{2}](https://latex.codecogs.com/svg.latex?\sqrt{2}/{2})), rotated (by ![45^{\circ}](https://latex.codecogs.com/svg.latex?45^{\circ})) and translated again (by ![p(x^{j}_{i-1},y^{j}_{i-1})](https://latex.codecogs.com/svg.latex?p(x^{j}_{i-1},y^{j}_{i-1}))) version is created:
+3. On iteration ![i](https://latex.codecogs.com/svg.latex?i) for each Crossed Square ![cs^{j}_{i-1},j=\overline{1,2,...,{2^{2(i-1)}}}](https://latex.codecogs.com/svg.latex?cs^{j}_{i-1},j=\overline{1,2,...,{2^{2(i-1)}}}) with center in ![p(x^{j}_{i-1},y^{j}_{i-1})](https://latex.codecogs.com/svg.latex?p(x^{j}_{i-1},y^{j}_{i-1})) in current matrix of Crossed Squares ![cs_{i-1}](https://latex.codecogs.com/svg.latex?cs_{i-1}), its translated (by ![p(-x^{j}_{i-1},-y^{j}_{i-1})](https://latex.codecogs.com/svg.latex?p(-x^{j}_{i-1},-y^{j}_{i-1})))scaled (by ![\sqrt{2}/{2}](https://latex.codecogs.com/svg.latex?\sqrt{2}/{2})), rotated (by ![45^{\circ}](https://latex.codecogs.com/svg.latex?45^{\circ})) and translated again (by ![p(x^{j}_{i-1},y^{j}_{i-1})](https://latex.codecogs.com/svg.latex?p(x^{j}_{i-1},y^{j}_{i-1}))) version is created:
 
 ![cs^{j,tsrt}_{i-1}=\begin{bmatrix}1&0&-x^{j}_{i-1}\\0&1&-y^{j}_{i-1}\\0&0&1\end{bmatrix}\cdot\begin{bmatrix}\frac{\sqrt{2}}{2}&0&0\\0&\frac{\sqrt{2}}{2}&0\\0&0&1\end{bmatrix}\cdot\begin{bmatrix}\cos(45^{\circ})&-\sin(45^{\circ})&0\\\sin(45^{\circ})&\cos(45^{\circ})&0\\0&0&1\end{bmatrix}\cdot{cs^{j}_{i-1}}\cdot\begin{bmatrix}1&0&x^{j}_{i-1}\\0&1&y^{j}_{i-1}\\0&0&1\end{bmatrix}=\begin{bmatrix}\frac{1}{2}&-\frac{1}{2}&-x^{j}_{i-1}\\\frac{1}{2}&\frac{1}{2}&-y^{j}_{i-1}\\0&0&1\end{bmatrix}\cdot{cs^{j}_{i-1}}\cdot\begin{bmatrix}1&0&x^{j}_{i-1}\\0&1&y^{j}_{i-1}\\0&0&1\end{bmatrix}](https://latex.codecogs.com/svg.latex?cs^{j,tsrt}_{i-1}=\\begin{bmatrix}1&0&-x^{j}_{i-1}\\\\0&1&-y^{j}_{i-1}\\\\0&0&1\\end{bmatrix}\\cdot\\begin{bmatrix}\\frac{\\sqrt{2}}{2}&0&0\\\\0&\\frac{\\sqrt{2}}{2}&0\\\\0&0&1\\end{bmatrix}\\cdot\\begin{bmatrix}\\cos(45^{\\circ})&-\\sin(45^{\\circ})&0\\\\\\sin(45^{\\circ})&\\cos(45^{\\circ})&0\\\\0&0&1\\end{bmatrix}\\cdot{cs^{j}_{i-1}}\\cdot\\begin{bmatrix}1&0&x^{j}_{i-1}\\\\0&1&y^{j}_{i-1}\\\\0&0&1\\end{bmatrix}=\\begin{bmatrix}\\frac{1}{2}&-\\frac{1}{2}&-x^{j}_{i-1}\\\\\\frac{1}{2}&\\frac{1}{2}&-y^{j}_{i-1}\\\\0&0&1\\end{bmatrix}\\cdot{cs^{j}_{i-1}}\\cdot\\begin{bmatrix}1&0&x^{j}_{i-1}\\\\0&1&y^{j}_{i-1}\\\\0&0&1\\end{bmatrix})
 
 4. Each ![cs^{j,tsrt}_{i-1}](https://latex.codecogs.com/svg.latex?cs^{j,tsrt}_{i-1}) is inscribing into its original ![cs^{j}_{i-1}](https://latex.codecogs.com/svg.latex?cs^{j}_{i-1}) and four Crossed Squares are recieved by this operation. Finally ![cs_{i}](https://latex.codecogs.com/svg.latex?cs_{i}) is collected:
 
-![cs_{i}=\begin{Bmatrix}{cs^{j}_{i-1}}\cap{cs^{j,tsrt}_{i-1}}|j=\overline{1,2,...,{2^{i-1}}^2}\end{Bmatrix}](https://latex.codecogs.com/svg.latex?cs_{i}=\begin{Bmatrix}{cs^{j}_{i-1}}\cap{cs^{j,tsrt}_{i-1}}|j=\overline{1,2,...,{2^{i-1}}^2}\end{Bmatrix})
+![cs_{i}=\begin{Bmatrix}{cs^{j}_{i-1}}\cap{cs^{j,tsrt}_{i-1}}|j=\overline{1,2,...,{2^{2(i-1)}}}\end{Bmatrix}](https://latex.codecogs.com/svg.latex?cs_{i}=\begin{Bmatrix}{cs^{j}_{i-1}}\cap{cs^{j,tsrt}_{i-1}}|j=\overline{1,2,...,{2^{2(i-1)}}}\end{Bmatrix})
 
+Note: The [CrossedSquare2](crossedsquare.py#L188) implementation is a little bit different but the ideas behind it is described here. Also in some equations matrix of lines is a vector of line points in homogeneous coordinates.
 
 ## Crossed Square 3
-
 <p align="center"><img src="data/a_CrossedSquare3_4.gif" width="256" height="256"/></p>
 
 CrossedSquare3 is differ from CrossedSquare2 by ![cs_{1}](https://latex.codecogs.com/svg.latex?cs_{1}) definition:
@@ -115,9 +114,37 @@ CrossedSquare3 is differ from CrossedSquare2 by ![cs_{1}](https://latex.codecogs
 ## Crossed Square 4
 <p align="center"><img src="data/a_CrossedSquare4_4.gif" width="256" height="256"/></p>
 
+![cs_{n}](https://latex.codecogs.com/svg.latex?cs_{n}) is built by CrossedSquare4 as follow:
+
+1. ![cs_{1}](https://latex.codecogs.com/svg.latex?cs_{1}) Crossed Square of iteration ![1](https://latex.codecogs.com/svg.latex?1) is a set of triangles:
+
+![cs_{1}=\begin{bmatrix}t(p(0.0,0.0),p(1.0,0.0)p(0.5,0.5))&t(p(1.0,0.0),p(1.0,1.0)p(0.5,0.5))\\t(p(1.0,1.0),p(0.0,1.0)p(0.5,0.5))&t(p(0.0,1.0),p(0.0,0.0)p(0.5,0.5))&\end{bmatrix}](https://latex.codecogs.com/svg.latex?cs_{1}=\begin{bmatrix}t(p(0.0,0.0),p(1.0,0.0)p(0.5,0.5))&t(p(1.0,0.0),p(1.0,1.0)p(0.5,0.5))\\\\t(p(1.0,1.0),p(0.0,1.0)p(0.5,0.5))&t(p(0.0,1.0),p(0.0,0.0)p(0.5,0.5))&\end{bmatrix})
+
+2. For each other iteration ![i=\overline{2,...,n}](https://latex.codecogs.com/svg.latex?i=\overline{2,...,n}) of Crossed Square next steps are repeating.
+
+3. On iteration ![i](https://latex.codecogs.com/svg.latex?i) each triangle ![t(p^{j,a}_{i-1},p^{j,b}_{i-1},p^{j,c}_{i-1}),j=\overline{1,2,...,2^{2(i-1)}}](https://latex.codecogs.com/svg.latex?t(p^{j,a}_{i-1},p^{j,b}_{i-1},p^{j,c}_{i-1}),j=\overline{1,2,...,2^{2(i-1)}}) of Crossed Square ![cs_{i-1}](https://latex.codecogs.com/svg.latex?cs_{i-1}) is splited two times:
+
+3.1. Calculate points of triangle sides middles:
+
+![p^{j,mab}_{i-1}=p^{j,a}_{i-1}+\frac{p^{j,a}_{i-1}-p^{j,b}_{i-1}}{2}](https://latex.codecogs.com/svg.latex?p^{j,mab}_{i-1}=p^{j,a}_{i-1}+\frac{p^{j,a}_{i-1}-p^{j,b}_{i-1}}{2})
+
+![p^{j,mbc}_{i-1}=p^{j,b}_{i-1}+\frac{p^{j,b}_{i-1}-p^{j,c}_{i-1}}{2}](https://latex.codecogs.com/svg.latex?p^{j,mbc}_{i-1}=p^{j,b}_{i-1}+\frac{p^{j,b}_{i-1}-p^{j,c}_{i-1}}{2})
+
+![p^{j,mca}_{i-1}=p^{j,c}_{i-1}+\frac{p^{j,c}_{i-1}-p^{j,a}_{i-1}}{2}](https://latex.codecogs.com/svg.latex?p^{j,mca}_{i-1}=p^{j,c}_{i-1}+\frac{p^{j,c}_{i-1}-p^{j,a}_{i-1}}{2})
+
+3.2. Calculate new triangles:
+
+![\begin{bmatrix}t^{k={4}\cdot{j}+0}_{i}\\t^{k={4}\cdot{j}+1}_{i}\\t^{k={4}\cdot{j}+2}_{i}\\t^{k={4}\cdot{j}+3}_{i}\end{bmatrix}=\begin{bmatrix}t(p^{j,a}_{i-1},p^{j,mab}_{i-1},p^{j,mca}_{i-1})\\t(p^{j,b}_{i-1},p^{j,mab}_{i-1},p^{j,mbc}_{i-1})\\t(p^{j,c}_{i-1},p^{j,mab}_{i-1},p^{j,mca}_{i-1})\\t(p^{j,c}_{i-1},p^{j,mab}_{i-1},p^{j,mbc}_{i-1})\end{bmatrix}](https://latex.codecogs.com/svg.latex?\begin{bmatrix}t^{k={4}\cdot{j}+0}_{i}\\\\t^{k={4}\cdot{j}+1}_{i}\\\\t^{k={4}\cdot{j}+2}_{i}\\\\t^{k={4}\cdot{j}+3}_{i}\end{bmatrix}=\begin{bmatrix}t(p^{j,a}_{i-1},p^{j,mab}_{i-1},p^{j,mca}_{i-1})\\\\t(p^{j,b}_{i-1},p^{j,mab}_{i-1},p^{j,mbc}_{i-1})\\\\t(p^{j,c}_{i-1},p^{j,mab}_{i-1},p^{j,mca}_{i-1})\\\\t(p^{j,c}_{i-1},p^{j,mab}_{i-1},p^{j,mbc}_{i-1})\end{bmatrix})
+
+4. Empy Crossed Square ![cs_{i}](https://latex.codecogs.com/svg.latex?cs_{i}) collects triangles ![t^{k}_{i}](https://latex.codecogs.com/svg.latex?t^{k}_{i}):
+
+![cs_{i}=\begin{Bmatrix}t^{k}_{i}|i=\overline{1,...,2^{2i}}\end{Bmatrix}](https://latex.codecogs.com/svg.latex?cs_{i}=\begin{Bmatrix}t^{k}_{i}|k=\overline{1,...,2^{2i}}\end{Bmatrix})
+
 
 ## Crossed Square 5
 <p align="center"><img src="data/a_CrossedSquare5_4.gif" width="256" height="256"/></p>
+
+
 
 # How To Run It?
 You can create environment by using file [environment.yml](environment.yml).
