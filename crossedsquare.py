@@ -142,7 +142,7 @@ class CrossedSquare0(CrossedSquare):
 			line_left = line_left + step_left
 			line_right = line_right + step_right
 		# second diagonal
-		line = Line('#0FF000FF', Point(1.0, 0.0), Point(0.0, 1.0))
+		line = Line('#FFFF00FF', Point(1.0, 0.0), Point(0.0, 1.0))
 		step_left = Line('', Point(-step_basic, 0.0), Point(0.0, -step_basic))
 		line_left = line + step_left
 		step_right = Line('', Point(0.0, step_basic), Point(step_basic, 0.0))
