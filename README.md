@@ -88,9 +88,28 @@ There are several ways to build a Crossed Square Fractal of iteration ![n](https
 
 ![cs^{scaled}_{n}](https://latex.codecogs.com/svg.latex?cs_{n}) is built by CrossedSquare2 as follow:
 
+1. Crossed Square on iteration ![n=1](https://latex.codecogs.com/svg.latex?n=1) is:
+
+![cs_{1}=\begin{bmatrix}l(p(0.0,0.0),p(1.0,0.0))&l(p(1.0,0.0),p(1.0,1.0))&l(p(1.0,1.0),p(0.0,1.0))\\l(p(0.0,1.0),p(0.0,0.0))&l(p(0.0,0.0),p(1.0,1.0))&l(p(1.0,0.0),p(0.0,0.1))\end{bmatrix}](https://latex.codecogs.com/svg.latex?cs_{1}=\begin{bmatrix}l(p(0.0,0.0),p(1.0,0.0))&l(p(1.0,0.0),p(1.0,1.0))&l(p(1.0,1.0),p(0.0,1.0))\\l(p(0.0,1.0),p(0.0,0.0))&l(p(0.0,0.0),p(1.0,1.0))&l(p(1.0,0.0),p(0.0,0.1))\end{bmatrix})
+
+2. For each other iteration ![i=\overline{2,...,n}](https://latex.codecogs.com/svg.latex?i=\overline{2,...,n}) of Crossed Square next steps are repeating.
+
+3. For each Crossed Square ![cs^{j}_{i-1},j=\overline{1,2,...,{2^{i-1}}^2}](https://latex.codecogs.com/svg.latex?cs^{j}_{i-1},j=\overline{1,2,...,{2^{i-1}}^2}) with center in ![p(x^{j}_{i-1},y^{j}_{i-1})](https://latex.codecogs.com/svg.latex?p(x^{j}_{i-1},y^{j}_{i-1})) in current matrix of Crossed Squares ![cs_{i-1}](https://latex.codecogs.com/svg.latex?cs_{i-1}), its translated (by ![p(-x^{j}_{i-1},-y^{j}_{i-1})](https://latex.codecogs.com/svg.latex?p(-x^{j}_{i-1},-y^{j}_{i-1})))scaled (by ![\sqrt{2}/{2}](https://latex.codecogs.com/svg.latex?\sqrt{2}/{2})), rotated (by ![45^{\circ}](https://latex.codecogs.com/svg.latex?45^{\circ})) and translated again (by ![p(x^{j}_{i-1},y^{j}_{i-1})](https://latex.codecogs.com/svg.latex?p(x^{j}_{i-1},y^{j}_{i-1}))) version is created:
+
+![cs^{j,tsrt}_{i-1}=\begin{bmatrix}1&0&-x^{j}_{i-1}\\0&1&-y^{j}_{i-1}\\0&0&1\end{bmatrix}\cdot\begin{bmatrix}\frac{\sqrt{2}}{2}&0&0\\0&\frac{\sqrt{2}}{2}&0\\0&0&1\end{bmatrix}\cdot\begin{bmatrix}\cos(45^{\circ})&-\sin(45^{\circ})&0\\\sin(45^{\circ})&\cos(45^{\circ})&0\\0&0&1\end{bmatrix}\cdot{cs^{j}_{i-1}}\cdot\begin{bmatrix}1&0&x^{j}_{i-1}\\0&1&y^{j}_{i-1}\\0&0&1\end{bmatrix}=\begin{bmatrix}\frac{1}{2}&-\frac{1}{2}&-x^{j}_{i-1}\\\frac{1}{2}&\frac{1}{2}&-y^{j}_{i-1}\\0&0&1\end{bmatrix}\cdot{cs^{j}_{i-1}}\cdot\begin{bmatrix}1&0&x^{j}_{i-1}\\0&1&y^{j}_{i-1}\\0&0&1\end{bmatrix}](https://latex.codecogs.com/svg.latex?cs^{j,tsrt}_{i-1}=\\begin{bmatrix}1&0&-x^{j}_{i-1}\\\\0&1&-y^{j}_{i-1}\\\\0&0&1\\end{bmatrix}\\cdot\\begin{bmatrix}\\frac{\\sqrt{2}}{2}&0&0\\\\0&\\frac{\\sqrt{2}}{2}&0\\\\0&0&1\\end{bmatrix}\\cdot\\begin{bmatrix}\\cos(45^{\\circ})&-\\sin(45^{\\circ})&0\\\\\\sin(45^{\\circ})&\\cos(45^{\\circ})&0\\\\0&0&1\\end{bmatrix}\\cdot{cs^{j}_{i-1}}\\cdot\\begin{bmatrix}1&0&x^{j}_{i-1}\\\\0&1&y^{j}_{i-1}\\\\0&0&1\\end{bmatrix}=\\begin{bmatrix}\\frac{1}{2}&-\\frac{1}{2}&-x^{j}_{i-1}\\\\\\frac{1}{2}&\\frac{1}{2}&-y^{j}_{i-1}\\\\0&0&1\\end{bmatrix}\\cdot{cs^{j}_{i-1}}\\cdot\\begin{bmatrix}1&0&x^{j}_{i-1}\\\\0&1&y^{j}_{i-1}\\\\0&0&1\\end{bmatrix})
+
+4. Each ![cs^{j,tsrt}_{i-1}](https://latex.codecogs.com/svg.latex?cs^{j,tsrt}_{i-1}) is inscribing into its original ![cs^{j}_{i-1}](https://latex.codecogs.com/svg.latex?cs^{j}_{i-1}) and four Crossed Squares are recieved by this operation. Finally ![cs_{i}](https://latex.codecogs.com/svg.latex?cs_{i}) is collected:
+
+![cs_{i}=\begin{Bmatrix}{cs^{j}_{i-1}}\cap{cs^{j,tsrt}_{i-1}}|j=\overline{1,2,...,{2^{i-1}}^2}\end{Bmatrix}](https://latex.codecogs.com/svg.latex?cs_{i}=\begin{Bmatrix}{cs^{j}_{i-1}}\cap{cs^{j,tsrt}_{i-1}}|j=\overline{1,2,...,{2^{i-1}}^2}\end{Bmatrix})
+
 
 ## Crossed Square 3
+
 <p align="center"><img src="data/a_CrossedSquare3_4.gif" width="256" height="256"/></p>
+
+CrossedSquare3 is differ from CrossedSquare2 by ![cs_{1}](https://latex.codecogs.com/svg.latex?cs_{1}) definition:
+
+![cs_{1}=\begin{bmatrix}l(p(0.5,0.0),p(0.0,0.0))&l(p(0.5,0.0),p(1.0,0.0))&l(p(1.0,0.5),p(1.0,1.0))&l(p(0.5,1.0),p(0.0,1.0))\\l(p(0.5,0.5),p(0.0,0.0))&l(p(0.5,0.5),p(1.0,0.0))&l(p(0.5,5.0),p(1.0,1.0))&l(p(0.5,0.5),p(0.0,1.0))\\l(p(0.0,0.5),p(0.0,0.0))&l(p(1.0,0.5),p(1.0,0.0))&l(p(0.5,1.0),p(1.0,1.0))&l(p(0.0,0.5),p(0.0,1.0))\end{bmatrix}](https://latex.codecogs.com/svg.latex?cs_{1}=\begin{bmatrix}l(p(0.5,0.0),p(0.0,0.0))&l(p(0.5,0.0),p(1.0,0.0))&l(p(1.0,0.5),p(1.0,1.0))&l(p(0.5,1.0),p(0.0,1.0))\\\\l(p(0.5,0.5),p(0.0,0.0))&l(p(0.5,0.5),p(1.0,0.0))&l(p(0.5,5.0),p(1.0,1.0))&l(p(0.5,0.5),p(0.0,1.0))\\\\l(p(0.0,0.5),p(0.0,0.0))&l(p(1.0,0.5),p(1.0,0.0))&l(p(0.5,1.0),p(1.0,1.0))&l(p(0.0,0.5),p(0.0,1.0))\end{bmatrix})
 
 
 ## Crossed Square 4
