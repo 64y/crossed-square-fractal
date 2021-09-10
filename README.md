@@ -157,7 +157,7 @@ number of layers | number of triangles in layer
 1 2 3 4 5 6 7 8 | 512 3584 10752 17920 17920 10752 3584 512
 
 # How To Run It?
-You can create environment by using file [environment.yml](environment.yml).
+You can create environment by using file [environment.yml](requirements.txt).
 
 # TODO
 - To implement the [svg_decode](crossedsquare.py#L100) method for the CrossedSquare class.
