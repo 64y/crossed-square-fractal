@@ -156,6 +156,10 @@ number of layers | number of triangles in layer
 1 2 3 4 5 6 7 |256 1536 3840 5120 3840 1536 256
 1 2 3 4 5 6 7 8 | 512 3584 10752 17920 17920 10752 3584 512
 
+
+## Crossed Square 6
+<p align="center"><img src="data/a_CrossedSquare6_5.gif" width="512" height="512"/></p>
+
 # How To Run It?
 You can create environment by using file [environment.yml](requirements.txt).
 
